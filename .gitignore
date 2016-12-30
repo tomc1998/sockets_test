@@ -1,2 +1,5 @@
 build
 $LOCALAPPDATA
+build.bat
+serverrun.bat
+clientrun.bat

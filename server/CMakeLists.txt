@@ -10,4 +10,8 @@ set(PROJECT_SOURCES
 
 add_executable(server ${PROJECT_SOURCES})
 
+# If using MSVC (Windows C compiler), make sure to link in the winsock library.
+if(MSVC)
+  target_link_libraries(server ws2_32.lib)
+endif(MSVC)
 

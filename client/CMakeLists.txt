@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-project(server)
+project(client)
 
 set(PROJECT_ROOT_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 set(PROJECT_SOURCE_DIR ${PROJECT_ROOT_DIR}/src)
@@ -10,5 +10,7 @@ set(PROJECT_SOURCES
 
 add_executable(client ${PROJECT_SOURCES})
 
-
-
+# If using MSVC (Windows C compiler), make sure to link in the winsock library.
+if(MSVC)
+  target_link_libraries(client ws2_32.lib)
+endif(MSVC)
